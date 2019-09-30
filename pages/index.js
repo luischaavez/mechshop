@@ -1,6 +1,10 @@
+import Items from '../components/Items';
+
 function Home() {
     return (
-        <div>Hello world!</div>
+        <div>
+            <Items />            
+        </div>
     );
 }
 

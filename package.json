@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "export": "next export",
+    "start": "next start",
+    "deploy": "npm run build && npm run export"
   },
   "keywords": [
     "mechanical"
@@ -14,8 +16,10 @@
   "author": "Luis Chávez",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.19.0",
     "next": "^9.0.3",
     "react": "^16.9.0",
-    "react-dom": "^16.9.0"
+    "react-dom": "^16.9.0",
+    "styled-components": "^4.3.2"
   }
 }
