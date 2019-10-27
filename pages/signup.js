@@ -1,8 +1,11 @@
 import { useState } from 'react';
-import axios from 'axios';
+import { useRouter } from 'next/router';
 import Form from '../components/styles/Form';
+import client from '../utils/api-client';
+import { storeToken } from '../utils/auth';
 
 function SignUp() {
+    const router = useRouter();
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
@@ -11,13 +14,17 @@ function SignUp() {
     function handleSubmit(e) {
         e.preventDefault();
 
-        axios.post('https://afse2jq821.execute-api.us-east-1.amazonaws.com/v1/signup', { firstName, lastName, email, password })
-            .then((response) => {
-                console.log(response);
-            })
-            .catch((err) => {
-                console.log(err);
-            });
+        client('signup', { 
+            method: 'POST',
+            body: { first_name: firstName, last_name: lastName, email, password },
+        })
+        .then(({ payload }) => {
+            storeToken(payload.token);
+            router.push('/');
+        })
+        .catch(err => {
+
+        });
     }
 
     return (

@@ -17,6 +17,7 @@ const StyledHeader = styled.header`
 `;
 
 const Logo = styled.h1`
+    font-family: 'Staatliches';
     font-size: 2rem;
     margin-left: 2rem;
     position: relative;
@@ -38,7 +39,7 @@ const Header = () => (
         <div className="bar">
             <Logo>
                 <Link href="/">
-                    <a>MECHSHOP</a>
+                    <a>_MECHSHOP_</a>
                 </Link>
             </Logo>
             <Nav/>

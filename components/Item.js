@@ -1,11 +1,13 @@
 import ItemStyles from './styles/ItemStyles';
 
 function Item(props) {
+    const { item } = props;
+
     return (
         <ItemStyles>
             <img src="/static/gnome.jpeg" alt="Image"/>
-            <h3>Item Name</h3>
-            <p>A brief description</p>
+            <h3>{ item.title }</h3>
+            <p>{ item.description }</p>
         </ItemStyles>
     );
 }

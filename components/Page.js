@@ -21,6 +21,13 @@ const Inner = styled.div`
 `;
 
 const GlobalStyle = createGlobalStyle`
+    @import url('https://fonts.googleapis.com/css?family=Roboto+Mono|Poppins|Staatliches&display=swap');
+
+    font-family: 'Staatliches', cursive;
+    font-family: 'Roboto Mono', monospace;
+    font-family: 'Pacifico', cursive;
+    font-family: 'Poppins', sans-serif;
+
     html {
         box-sizing: border-box;
         font-size: 10px;
@@ -33,7 +40,7 @@ const GlobalStyle = createGlobalStyle`
         margin: 0;
         font-size: 1.5rem;
         line-height: 2;
-        font-family: 'radnika_next';
+        font-family: 'Roboto Mono', 'Poppins';
         color: ${props => props.theme.color};
         background-color: ${props => props.theme.mainColor};
     }
@@ -48,7 +55,7 @@ const Page = (props) => (
                 <Inner>
                     {props.children}
                 </Inner>
-            </StyledPage>         
+            </StyledPage>
         </React.Fragment>
     </ThemeProvider>
 )

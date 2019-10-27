@@ -1,6 +1,9 @@
 import Items from '../components/Items';
+import { withAuth } from '../utils/auth';
 
-function Home() {
+function Home(props) {
+    console.log(props);
+
     return (
         <div>
             <Items />            
@@ -8,4 +11,4 @@ function Home() {
     );
 }
 
-export default Home;
+export default withAuth(Home);
